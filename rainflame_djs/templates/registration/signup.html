@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Signup</h2>
+  <!-- IF the user is authenticated, allow them to select other accounts -->
+  {% if user.is_authenticated %}
+    <h2 style="color:green"> Connect your facebook account </h2>
+    <h2> Connect other social media accounts</p>
+    <a href="{% url 'social:begin' 'twitter' %}">Twitter =></a><br>
+    <a href="#">Instagram =></a><br><br>    
+    <a href="#"> Continue =></a>
+
+  <!-- Set up an account by linking to facebook -->
+  {% else %}
+    <h2> Connect your facebook account </h2>
+    <h3><a href="{% url 'social:begin' 'facebook' %}">Facebook =></a><br>/h3>    
+    <p> <a href="#">Why do I need to link my account?</a></p>
+    <p><a href="#">Don't have a social media account?</a></p>
+  {% endif %}
+
+  
+{% endblock %}

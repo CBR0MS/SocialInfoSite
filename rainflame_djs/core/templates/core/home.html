@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Index</h2>
+  {% if user.is_authenticated %}
+        <p>Hello {{ user.username }}</p>
+  {% endif %}
+  <h3>What is Rainflame?</h3>
+  <a href="{% url 'signup' %}">Begin =></a>
+{% endblock %}
